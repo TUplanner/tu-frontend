@@ -1,9 +1,11 @@
-import ProgramDropdown from "@/components/ProgramDropdown";
+import ProgramsDropdown from "@/components/ProgramsDropdown";
+import TermsDropdown from "@/components/TermsDropdown";
 
 const Gettingstarted = () => {
   return (
-    <div>
-      <ProgramDropdown />
+    <div className="flex bg-tu-grey h-screen">
+      <ProgramsDropdown />
+      <TermsDropdown />
     </div>
   );
 };

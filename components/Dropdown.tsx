@@ -19,12 +19,19 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-interface SearchDropdownProps {
+interface DropdownProps {
+  classname?: string;
   name: string;
   items: string[];
+  search?: boolean;
 }
 
-const SearchDropdown = ({ name, items }: SearchDropdownProps) => {
+const Dropdown: React.FC<DropdownProps> = ({
+  classname,
+  name,
+  items = [],
+  search = false,
+}) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
 
@@ -35,17 +42,19 @@ const SearchDropdown = ({ name, items }: SearchDropdownProps) => {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className={`${classname} w-[200px] justify-between overflow-hidden`}
         >
-          {value ? items.find((item) => item === value) : `Select ${name}...`}
+          {value || `Select ${name}...`}
           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className={`${classname} w-[200px] p-0`}>
         <Command>
-          <CommandInput placeholder={`Search ${name}...`} className="h-9" />
+          {search && (
+            <CommandInput placeholder={`Search ${name}...`} className="h-9" />
+          )}
           <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandEmpty>No {name} found.</CommandEmpty>
             <CommandGroup>
               {items.map((item) => (
                 <CommandItem
@@ -73,4 +82,4 @@ const SearchDropdown = ({ name, items }: SearchDropdownProps) => {
   );
 };
 
-export default SearchDropdown;
+export default Dropdown;

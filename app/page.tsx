@@ -4,7 +4,7 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 const Home = () => {
   return (
-    <main className="bg-red-50 h-screen">
+    <main className="bg-tu-grey h-screen">
       <div className="py-10 px-8 lg:px-28 ">
         <h1 className="text-6xl">
           Your go-to tool for effortless academic scheduling.
