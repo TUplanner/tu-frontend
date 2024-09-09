@@ -6,7 +6,7 @@ interface Data {
 }
 
 const TermsDropdown = async () => {
-  const response = await fetch(`${process.env.API_URL}/terms`);
+  const response = await fetch(`${process.env.API_URL}/classSearch/getTerms`);
   const data: Data[] = await response.json();
   const terms = data.map((item) => item.description);
 
