@@ -1,5 +1,17 @@
+"use client";
+
+import { useGlobalState } from "@/components/contexts/GlobalStateProvider";
+
 const Courses = () => {
-  return <div>Courses</div>;
+  const { data } = useGlobalState();
+  console.log(data);
+  return (
+    <div>
+      {/* Access and display specific fields from the object */}
+      <p>Program: {data.program}</p>
+      <p>Term: {data.term}</p>
+    </div>
+  );
 };
 
 export default Courses;

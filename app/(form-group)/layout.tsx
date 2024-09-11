@@ -11,6 +11,7 @@ import {
 import { ClientPathname } from "@/components/ClientPathname"; // Client component to handle pathname
 import Link from "next/link";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
+import ProgressStepper from "@/components/ProgressStepper";
 
 const NavLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -20,7 +21,9 @@ const NavLayout = ({ children }: { children: React.ReactNode }) => {
       </div>
 
       <div className="flex flex-col w-full p-8">
-        <div className="min-h-20">Status bar</div>
+        <div className="min-h-20 flex">
+          <ProgressStepper />
+        </div>
         <div className="py-10">
           <Card className="w-full ">
             <CardHeader>
@@ -42,7 +45,7 @@ const NavLayout = ({ children }: { children: React.ReactNode }) => {
         </div>
         <div className="flex flex-row-reverse ">
           <Button asChild size="lg">
-            <Link href="/gettingstarted" className="gap-1">
+            <Link href="/courses" className="gap-1">
               Next
               <ArrowRightIcon />
             </Link>

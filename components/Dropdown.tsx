@@ -18,6 +18,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useGlobalState } from "./contexts/GlobalStateProvider";
 
 interface DropdownProps {
   classname?: string;
@@ -34,6 +35,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 }) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
+  const { data, setData } = useGlobalState();
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -56,13 +58,20 @@ const Dropdown: React.FC<DropdownProps> = ({
           <CommandList>
             <CommandEmpty>No {name} found.</CommandEmpty>
             <CommandGroup>
-              {items.map((item) => (
+              {items.map((item, index) => (
                 <CommandItem
-                  key={item}
+                  key={`${item}-${index}`}
                   value={item}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue);
+                    const selectedValue =
+                      currentValue === value ? "" : currentValue;
+                    setValue(selectedValue);
                     setOpen(false);
+                    console.log(selectedValue);
+                    setData((prevData: any) => ({
+                      ...prevData,
+                      [name]: selectedValue,
+                    }));
                   }}
                 >
                   {item}

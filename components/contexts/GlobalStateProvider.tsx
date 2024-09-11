@@ -1,8 +1,14 @@
 "use client";
 import { createContext, useContext, useState } from "react";
 
+// Define default initial data
+const defaultData = {
+  program: "",
+  term: "",
+};
+
 const GlobalStateContext = createContext({
-  data: null,
+  data: defaultData,
   setData: (data: any) => {},
 });
 
@@ -11,7 +17,7 @@ export const GlobalStateProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(defaultData);
 
   return (
     <GlobalStateContext.Provider value={{ data, setData }}>
