@@ -1,4 +1,3 @@
-// app/(form-group)/NavLayout.tsx
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,12 +7,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ClientPathname } from "@/components/ClientPathname"; // Client component to handle pathname
-import Link from "next/link";
+import { ClientPathname } from "@/components/ClientPathname";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import ProgressStepper from "@/components/ProgressStepper";
+import ClickableLink from "@/components/ClickableLink";
 
-const NavLayout = ({ children }: { children: React.ReactNode }) => {
+const FormLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <section className="flex flex-row-reverse bg-tu-grey h-screen">
       <div className="hidden lg:flex min-w-[400px] mt-20 flex-col ">
@@ -45,10 +44,10 @@ const NavLayout = ({ children }: { children: React.ReactNode }) => {
         </div>
         <div className="flex flex-row-reverse ">
           <Button asChild size="lg">
-            <Link href="/courses" className="gap-1">
+            <ClickableLink href="/courses">
               Next
               <ArrowRightIcon />
-            </Link>
+            </ClickableLink>
           </Button>
         </div>
       </div>
@@ -56,4 +55,4 @@ const NavLayout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default NavLayout;
+export default FormLayout;

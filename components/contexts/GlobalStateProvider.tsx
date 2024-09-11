@@ -1,7 +1,6 @@
 "use client";
 import { createContext, useContext, useState } from "react";
 
-// Define default initial data
 const defaultData = {
   program: "",
   term: "",

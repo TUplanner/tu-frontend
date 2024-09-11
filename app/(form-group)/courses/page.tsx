@@ -1,16 +1,11 @@
-"use client";
-
-import { useGlobalState } from "@/components/contexts/GlobalStateProvider";
+import FormRedirector from "@/components/FormRedirector";
 
 const Courses = () => {
-  const { data } = useGlobalState();
-  console.log(data);
   return (
-    <div>
-      {/* Access and display specific fields from the object */}
-      <p>Program: {data.program}</p>
-      <p>Term: {data.term}</p>
-    </div>
+    <FormRedirector>
+      <p>Program:</p>
+      <p>Termm:</p>
+    </FormRedirector>
   );
 };
 
