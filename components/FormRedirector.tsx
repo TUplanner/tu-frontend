@@ -11,7 +11,7 @@ const FormRedirector = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const hasEmptyFields = Object.values(data).some((value) => value === "");
     if (hasEmptyFields) {
-      router.push("/gettingstarted");
+      router.push("/setup");
     }
   }, [data, router]);
 
