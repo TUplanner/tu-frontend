@@ -6,7 +6,6 @@ const ProgressStepper = () => {
   const [className, setClassName] = useState();
   const path = usePathname();
 
-  console.log("hello");
   return (
     <>
       <div className="w-1/3 h-20 bg-tu-silver relative rounded-l-3xl before:absolute before:left-full before:border-y-[2.5rem] before:border-l-[1.5rem] before:border-l-tu-silver before:border-y-transparent before:z-20">

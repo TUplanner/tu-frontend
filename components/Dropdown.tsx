@@ -67,7 +67,6 @@ const Dropdown: React.FC<DropdownProps> = ({
                       currentValue === value ? "" : currentValue;
                     setValue(selectedValue);
                     setOpen(false);
-                    console.log(selectedValue);
                     setData((prevData: any) => ({
                       ...prevData,
                       [name]: selectedValue,
