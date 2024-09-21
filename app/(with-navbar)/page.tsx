@@ -4,7 +4,7 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 const Home = () => {
   return (
-    <main className="bg-tu-grey h-screen">
+    <main className="bg-tu-grey h-[calc(100vh-5rem)]">
       <div className="py-10 px-8 lg:px-28 ">
         <h1 className="text-6xl">
           Your go-to tool for effortless academic scheduling.
@@ -18,7 +18,7 @@ const Home = () => {
           journey simpler and more efficient.
         </p>
         <Button asChild size="lg">
-          <Link href="/gettingstarted" className="gap-1">
+          <Link href="/setup" className="gap-1">
             Get Started
             <ArrowRightIcon />
           </Link>
